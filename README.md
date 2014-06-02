@@ -1,6 +1,6 @@
 ## Blogament
 
-Blogament is a Rails Engine designed to provide it's host with a blogging & commenting feature.
+Blogament is a Rails Engine designed to provide its host with a blogging & commenting feature.
 
 ## Technologies/Dependencies
 RSpec
