@@ -15,7 +15,7 @@ Instructions for installing and mounting to come.
 ## Usage
 
 - Posts model which hooks into an admin model
-- Allow admins to manage blogs via ActiveAdmin
+- Allow admins to manage blogs (use ActiveAdmin or CanCanCan?)
 - Comments model which hooks into a user model
 - WYSIWYG for Blogging (tinyMCE?)
 - Update views with Backbone
