@@ -3,11 +3,11 @@
 Blogament is a Rails Engine designed to provide its host with a blogging & commenting feature.
 
 ## Technologies/Dependencies
-RSpec
-Caybara
-TinyMCE
-Foundation
-PostgresSQL
+- RSpec
+- Caybara
+- TinyMCE
+- Foundation
+- PostgresSQL
 
 ## Getting started
 Instructions for installing and mounting. (Just thoughts for now.)
@@ -25,22 +25,28 @@ After you install Blogament and add it to your Gemfile, you need to run the gene
 rails generate blogament:install
 ```
 
-The generator will install an initializer which describes Blogaments's configuration options... please take a look.
-When you're done, you are ready to add a Blogament blog model using the generator:
+The generator will install an initializer which describes Blogaments's configuration options.
 
-```console
-rails generate blogament blog
+The generator commes with blog and comment model by default, along with routes and views. You can comment out the comment model functionality
+in the initializer if you prefer to not allow commenting for your blog.
+
+Next up in the initializer, you need to configure the user who's id will be used for the blogs admin_id foreign key.
+If you're enabling commenting, you'll need to also configure the model for comments.
+
+Finally, you'll run `rake db:migrate` as the generator will have created a migration file.
+
+## Models
+
+Blogament needs to know who can create posts and who can't. In order for Blogament to place nice with your current authentication
+implementation, you'll need to implment:
+
+```ruby
+def admin?
+  # responds with true or false
+end
 ```
+## Views
 
-This will create your blog model. Next, you'll usually run `rake db:migrate` as the generator will have created a migration file.
-
-If you also want to allow commenting for all users you can use the following generator:
-
-```console
-rails generate blogament comment
-```
-
-This will create your comment model. Again, you'll usually run `rake db:migrate` as the generator will have created a migration file.
 
 ## Usage
 
