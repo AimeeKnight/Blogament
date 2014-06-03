@@ -61,4 +61,4 @@ end
 
 ## License
 
-NSS Chronicles is released under the [MIT License](http://www.opensource.org/licenses/MIT).
+Blogament is released under the [MIT License](http://www.opensource.org/licenses/MIT).
