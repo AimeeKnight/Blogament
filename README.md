@@ -1,6 +1,6 @@
 ## Blogament
 
-Blogament is a Rails Engine designed to provide its host with a blogging & commenting feature.
+Blogament is a Rails Engine designed to provide its host with blogging and commenting features.
 
 ## Getting started
 Instructions for installing and mounting. (Just thoughts for now.)
@@ -18,12 +18,12 @@ After you install Blogament and add it to your Gemfile, you need to run the gene
 rails generate blogament:install
 ```
 
-The generator will install an initializer which describes Blogaments's configuration options.
+The generator will install an initializer which describes Blogament's configuration options.
 
 The generator commes with a blog and comment model by default, along with routes and views.
 You can comment out the comment model functionality in the initializer if you prefer to not allow commenting for your blog.
 
-In order for your apps users to 'have many' blogs, you'll need to set your user object (in quotes) as Blogaments author:
+In order for your app's users to 'have many' blogs, you'll need to set your user object (in quotes) as Blogaments author class:
 
 ```ruby
 Rails.application.config.before_initialize do
@@ -31,16 +31,16 @@ Rails.application.config.before_initialize do
 end
 ```
 
-If you're enabling commenting, you'll need to also configure the model for comments.
+If you're enabling commenting, you'll need to also set the model for comments.
 
 You'll then run `rake db:migrate` as the generator will have created a migration file.
 
-Finally, Blogament needs to know who can create posts and who can't.
+Finally, if your applications supports users with different roles, Blogament needs to know who can create posts and who can't.
 In order for Blogament to place nice with your current authentication
 implementation, you'll need to implment:
 
 ```ruby
-def admin?
+def author?
   # responds with true or false
 end
 ```
@@ -56,6 +56,7 @@ end
 - Allow blogs to have images
 
 Extra Credit?
+- Store blog images via S3
 - Allow comments to include user picture via Gravatar 
 - Allow admins to approve or deny a comment from a user who isn't signed in
 
