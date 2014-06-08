@@ -45,6 +45,14 @@ def author?
 end
 ```
 
+## Rails Console
+Posts and comments need to be accessed via their namespace.
+For example:
+
+```console
+Blorgh::Post.find(1)
+```
+
 ## Planned Usage
 
 - Posts with title, content, image & admin_id
