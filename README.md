@@ -9,7 +9,7 @@ Instructions for installing and mounting.
 Blogament works with Rails 4.1.1 onwards. You can add it to your Gemfile with:
 
 ```ruby
-gem 'blogament :git => 'git://github.com/AimeeKnight/Blogament.git
+gem 'blogament, :git => 'git://github.com/AimeeKnight/Blogament.git
 ```
 Run the `bundle` command to install it.
 
