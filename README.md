@@ -33,7 +33,7 @@ end
 ```
 Finally, Blogament needs to know who can create posts and who can't.
 In order for Blogament to place nice with your current authentication
-implementation, you'll need to implment:
+implementation, you'll need to implment the following on you user model:
 
 ```ruby
 def can_blog?
@@ -52,6 +52,16 @@ Blogament::Post.find(1)
 ```
 
 #### Views
+
+Blogs listed on the index and show page will display a 'by line' which
+identifies the blogs author. It's up to you to tell blogament what you'd like the by line to display.
+In order to do so, you'll also need to implement the following in your model:
+
+```ruby
+def by_line
+  #you may want to return the the models name, or maybe their email.
+end
+```
 
 Blogament's views can be customized as well. For instance, in order to customize the layout for
 the posts index page you can create a file at `app/views/blogament/posts/index.html.erb`,
