@@ -13,7 +13,13 @@ gem 'blogament'
 ```
 Run the `bundle` command to install it.
 
-After you install Blogament and add it to your Gemfile, you need to copy over Blogament's migratinons:
+To make your app Blogament's functionality, you need to mount the engine inside you app in `routes.rb` as follows:
+
+```ruby
+mount Blogament::Engine, at: "/blog"
+```
+
+After adding Blogament to your Gemfile and mounting it within your app, you need to copy over Blogament's migrations:
 
 ```console
 rake blogament:install:migrations
