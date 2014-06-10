@@ -53,12 +53,9 @@ Blogament::Post.find(1)
 
 #### Views
 
-Blogament's application layout will be using your app's applicaiton layout.
-This means that any links in your application layout must be prepended with main_app. For example:
-
-```ruby
-<%= link_to('Register', main_app.new_user_registration_path)  %>
-```
+Blogament's views can be customized as well. For instance, in order to customize the layout for
+the posts index page you can create a file at `app/views/blogament/posts/index.html.erb`,
+and it will be used in place of the default view provided.
 
 ## License
 
