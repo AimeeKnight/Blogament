@@ -39,7 +39,7 @@ end
 ```
 Finally, Blogament needs to know who can create posts and who can't.
 In order for Blogament to place nice with your current authentication
-implementation, you'll need to implment the following on you user model:
+implementation, you'll need to impelment the following on you user model:
 
 ```ruby
 def can_blog?

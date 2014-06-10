@@ -1,0 +1,26 @@
+Run options: include {:focused=>true}
+
+All examples were filtered out; ignoring {:focused=>true}
+
+User creates a post
+[31m  views an index page of posts (FAILED - 1)[0m
+
+Failures:
+
+  1) User creates a post views an index page of posts
+     [31mFailure/Error: visit blogament.root_path[0m
+     [31mActionView::Template::Error:[0m
+     [31m  undefined method `image_url' for #<Blogament::Post:0x000001042cac40>[0m
+     [36m# ./app/views/blogament/posts/index.html.erb:21:in `block in ___sers_aimeeknight__esktop______uby_blogament_app_views_blogament_posts_index_html_erb__1394705988391048818_2182387840'[0m
+     [36m# ./app/views/blogament/posts/index.html.erb:16:in `___sers_aimeeknight__esktop______uby_blogament_app_views_blogament_posts_index_html_erb__1394705988391048818_2182387840'[0m
+     [36m# ./spec/features/blogament/user_creates_new_post_spec.rb:10:in `block (2 levels) in <top (required)>'[0m
+
+Finished in 0.12414 seconds (files took 1.61 seconds to load)
+[31m1 example, 1 failure[0m
+
+Failed examples:
+
+[31mrspec ./spec/features/blogament/user_creates_new_post_spec.rb:6[0m [36m# User creates a post views an index page of posts[0m
+
+Randomized with seed 42661
+
