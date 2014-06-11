@@ -1,6 +1,6 @@
 module Blogament
   class Post < ActiveRecord::Base
-    # mount_uploader :image, ImageUploader
+    mount_uploader :image, ImageUploader
     # attr_accessor :author_name
 
     has_many :comments
