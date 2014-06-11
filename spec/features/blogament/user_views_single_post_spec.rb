@@ -1,10 +1,10 @@
 require 'spec_helper'
 
-describe "User views a single post" do
+feature "User views a single post" do
   let!(:post) { FactoryGirl.create(:post) }
 
-  it "views an single post show page" do
-    visit blorgh.root_path
+  scenario "views an single post show page" do
+    visit blogament.root_path
     click_link "Show"
     expect(page).to have_content("Author")
     expect(page).to have_content("Title")
