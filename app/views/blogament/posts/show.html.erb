@@ -4,25 +4,26 @@
 
   <div class="col-lg-12 pull-right">
     <div class="btn-group pull-right">
-      <%= link_to 'Edit', edit_post_path(@post), class: "btn btn-default" %>
-      <%= link_to 'Back', posts_path, class: "btn btn-default" %>
+      <% if current_user && @post.author_id == current_user.id %>
+        <%= link_to 'Edit', edit_post_path(@post), class: "btn btn-default" %>
+        <%= link_to 'Back', posts_path, class: "btn btn-default" %>
+      <% end %>
     </div>
   </div>
 
   <div class="col-lg-12">
-  <div>
-    <%= image_tag @post.image_url(:thumb).to_s %>
-  </div>
+    <div>
+      <%= image_tag @post.image_url(:thumb).to_s %>
+    </div>
 
-  <div class="jumbotron">
-    <h1><%= @post.title %></h1>
-    <p>
-      <%= raw @post.text %>
-    </p>
-    <small><%= @post.author.by_line %></small>
-
+    <div class="jumbotron">
+      <h1><%= @post.title %></h1>
+      <p>
+        <%= raw @post.text %>
+      </p>
+      <small><%= @post.author.by_line %></small>
+    </div>
   </div>
-</div>
 
 <div class="row">
   <div class="col-lg-12">

@@ -2,22 +2,22 @@ Run options: include {:focused=>true}
 
 All examples were filtered out; ignoring {:focused=>true}
 
-Blogament::Post
-[32m  has many comments[0m
-[32m  belongs to an author[0m
-[32m  has a title[0m
-
 User views posts
 [32m  views an index page of posts[0m
-
-User views a single post
-[32m  views an single post show page[0m
 
 User creates a post
 [32m  a logged in user created a post[0m
 
-Finished in 1.39 seconds (files took 1.41 seconds to load)
+Blogament::Post
+[32m  has many comments[0m
+[32m  has a title[0m
+[32m  belongs to an author[0m
+
+User views a single post
+[32m  views an single post show page[0m
+
+Finished in 1.62 seconds (files took 1.44 seconds to load)
 [32m6 examples, 0 failures[0m
 
-Randomized with seed 58518
+Randomized with seed 47997
 

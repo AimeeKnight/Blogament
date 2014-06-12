@@ -1,5 +1,5 @@
 <div class="row">
-  <%= form_for @post, class: "form-horizontal", :html => {:multipart => true} do |f| %>
+  <%= form_for @post, :html => {class: "form-horizontal", :multipart => true} do |f| %>
     <fieldset>
       <legend></legend>
         <% if @post.errors.any? %>

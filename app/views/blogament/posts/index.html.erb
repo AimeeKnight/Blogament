@@ -18,10 +18,6 @@
         <small><%= post.author.by_line %></small>
         <div class="pull-right">
           <%= link_to 'Full Post', post, class: "btn btn-info" %>
-          <%# if post.author_id == current_user.id %>
-            <%= link_to 'Edit', edit_post_path(post), class: "btn btn-default" %>
-            <%= link_to 'Destroy', post, class: "btn btn-primary", method: :delete, data: { confirm: 'Are you sure?' } %>
-          <%# end %>
         </div>
         <div class="clear"></div>
       </div>
