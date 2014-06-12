@@ -10,9 +10,11 @@ feature "User creates a post" do
     expect(page).to have_content("New post")
     fill_in 'Title', :with => 'Test Title'
     attach_file "Image", '/Users/aimeeknight/Desktop/NSS-Ruby/blogament/spec/data/skating.jpg'
+    page.execute_script('$("#tinymce4").tinymce().setContent("Test Text from TinyMCE.")')
     click_button 'Create Post'
     expect(current_path).to eq blogament.posts_path
     expect(page).to have_content "Test Title"
+    expect(page).to have_content "Test Text from TinyMCE."
     expect(page.find('img')['src']).to have_content '/thumb_skating.jpg'
   end
 end
