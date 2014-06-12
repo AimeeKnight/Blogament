@@ -3,10 +3,11 @@ require 'jquery-rails'
 require 'tinymce-rails'
 require 'sass-rails'
 require 'bootstrap-sass'
-require 'foundation-rails'
+# require 'foundation-rails'
 require 'pg'
 require 'carrierwave'
 require 'mini_magick'
+require 'bootswatch-rails'
 
 module Blogament
   mattr_writer :author_class

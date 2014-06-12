@@ -1,28 +1,36 @@
-<p id="notice"><%= notice %></p>
+<div class="row">
 
-<p>
-  <b>Author</b>
-  <%= @post.author.by_line %>
-</p>
+  <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @post.title %>
-</p>
+  <div class="col-lg-12 pull-right">
+    <div class="btn-group pull-right">
+      <%= link_to 'Edit', edit_post_path(@post), class: "btn btn-default" %>
+      <%= link_to 'Back', posts_path, class: "btn btn-default" %>
+    </div>
+  </div>
 
-<p>
-  <%=image_tag @post.image_url(:thumb).to_s %>
-</p>
+  <div class="col-lg-12">
+  <div>
+    <%= image_tag @post.image_url(:thumb).to_s %>
+  </div>
 
-<p>
-  <strong>Text:</strong>
-  <%=raw @post.text %>
-</p>
+  <div class="jumbotron">
+    <h1><%= @post.title %></h1>
+    <p>
+      <%= raw @post.text %>
+    </p>
+    <small><%= @post.author.by_line %></small>
 
+  </div>
+</div>
 
-<h3>Comments</h3>
-<%= render @post.comments %>
-<%= render "blogament/comments/form" %>
+<div class="row">
+  <div class="col-lg-12">
 
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Back', posts_path %>
+  <h3>Comments</h3>
+    <%= render @post.comments %>
+  <hr>
+    <%= render "blogament/comments/form" %>
+
+  </div>
+</div>

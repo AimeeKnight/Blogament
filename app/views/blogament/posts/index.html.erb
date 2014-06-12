@@ -1,32 +1,35 @@
-<h1>Listing posts</h1>
+<div class="row">
+  <h1>Blogs</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Author</th>
-      <th>Text</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
+  <% @posts.each do |post| %>
+    <div class="panel panel-info">
+      <div class="panel-heading">
+        <h3 class="panel-title">
+          <%= post.title %>
+        </h3>
+      </div>
+      <div class="panel-body">
+        <blockquote>
+          <p><%= raw post.text %></p>
+        </blockquote>
+      </div>
+      <div class="panel-footer">
+        -
+        <small><%= post.author.by_line %></small>
+        <div class="pull-right">
+          <%= link_to 'Full Post', post, class: "btn btn-info" %>
+          <%# if post.author_id == current_user.id %>
+            <%= link_to 'Edit', edit_post_path(post), class: "btn btn-default" %>
+            <%= link_to 'Destroy', post, class: "btn btn-primary", method: :delete, data: { confirm: 'Are you sure?' } %>
+          <%# end %>
+        </div>
+        <div class="clear"></div>
+      </div>
+    </div>
+  <% end %>
 
-  <tbody>
-    <% @posts.each do |post| %>
-      <tr>
-        <td><%= post.title %></td>
-        <td><%= post.author.by_line %></td>
-        <td><%= raw post.text %></td>
-        <td><%= image_tag post.image_url(:thumb).to_s.gsub(Rails.root.to_s + '/public', '') %></td>
-        <td><%= link_to 'Show', post %></td>
-        <td><%= link_to 'Edit', edit_post_path(post) %></td>
-        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+  <br>
 
-<br>
+  <%= link_to 'New Post', new_post_path, class: "btn btn-success" %>
+</div>
 
-<%= link_to 'New Post', new_post_path %>

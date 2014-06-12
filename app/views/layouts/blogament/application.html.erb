@@ -7,22 +7,42 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <%= link_to "Home page", main_app.root_path %>
+  <div class="navbar navbar-default">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <%= link_to "Home", main_app.root_path, class: "navbar-brand" %>
+    </div>
+    <div class="navbar-collapse collapse navbar-responsive-collapse">
+      <ul class="nav navbar-nav">
+        <li class="active"><%= link_to "Posts", posts_path %></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+      </ul>
+    </div>
+  </div>
 
-<%= yield %>
+  <div class="container">
 
-</body>
-<%= tinymce %>
-<script type="text/javascript">
-$("document:ready", function() {
-  $("[rel=tinymce]").tinymce({
-    theme: "modern",
-    toolbar: "bold,italic,underline,|,bullist,numlist,outdent,indent,|,undo,redo,|,pastetext,pasteword,",
-    pagebreak_separator: "<p class='page-separator'>&nbsp;</p>",
-    relative_urls: false,
-    remove_script_host: false,
-    document_base_url: (!window.location.origin ? window.location.protocol + "//" + window.location.host : window.location.origin) + "/",
-  })
+    <%= yield %>
+
+  </div>
+
+  </body>
+  <%= tinymce %>
+  <script type="text/javascript">
+  $("document:ready", function() {
+    $("[rel=tinymce]").tinymce({
+      theme: "modern",
+      toolbar: "bold,italic,underline,|,bullist,numlist,outdent,indent,|,undo,redo,|,pastetext,pasteword,",
+      pagebreak_separator: "<p class='page-separator'>&nbsp;</p>",
+      relative_urls: false,
+      remove_script_host: false,
+      document_base_url: (!window.location.origin ? window.location.protocol + "//" + window.location.host : window.location.origin) + "/",
+    })
 });
 </script>
 </html>

@@ -15,6 +15,5 @@ feature "User creates a post" do
     expect(current_path).to eq blogament.posts_path
     expect(page).to have_content "Test Title"
     expect(page).to have_content "Test Text from TinyMCE."
-    expect(page.find('img')['src']).to have_content '/thumb_skating.jpg'
   end
 end

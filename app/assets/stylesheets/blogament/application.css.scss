@@ -14,4 +14,14 @@
  *= require_self
  */
 
+@import "bootswatch/simplex/variables";
 @import "bootstrap";
+
+// Bootstrap body padding for fixed navbar
+//body { padding-top: 60px; }
+
+@import "bootswatch/simplex/bootswatch";
+
+.clear {
+  clear: both;
+}
