@@ -1,0 +1,11 @@
+language: ruby
+rvm:
+  - "2.1.1"
+addons:
+  #postgresql: "9.3"
+before_script:
+  #- cp config/database.example.yml config/database.yml
+  #- cp config/application.travis.yml config/application.yml
+  #- psql -c 'create database squmblr_test;' -U postgres
+
+script: 'bundle exec rspec spec'
