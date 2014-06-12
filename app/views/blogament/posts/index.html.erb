@@ -16,12 +16,9 @@
     <% @posts.each do |post| %>
       <tr>
         <td><%= post.title %></td>
-
-        <% if post.author %>
-          <td><%= post.author.by_line %></td>
-        <% end %>
-        <td><%=raw post.text %></td>
-        <td><%=image_tag post.image_url(:thumb).to_s %></td>
+        <td><%= post.author.by_line %></td>
+        <td><%= raw post.text %></td>
+        <td><%= image_tag post.image_url(:thumb).to_s.gsub(Rails.root.to_s + '/public', '') %></td>
         <td><%= link_to 'Show', post %></td>
         <td><%= link_to 'Edit', edit_post_path(post) %></td>
         <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
