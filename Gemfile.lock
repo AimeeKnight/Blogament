@@ -50,6 +50,9 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
+    capybara-webkit (1.1.0)
+      capybara (~> 2.0, >= 2.0.2)
+      json
     carrierwave (0.10.0)
       activemodel (>= 3.2.0)
       activesupport (>= 3.2.0)
@@ -165,6 +168,7 @@ PLATFORMS
 DEPENDENCIES
   blogament!
   capybara
+  capybara-webkit
   factory_girl_rails
   pg
   rspec-rails (~> 3.0)

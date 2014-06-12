@@ -5,31 +5,19 @@ All examples were filtered out; ignoring {:focused=>true}
 User views a single post
 [32m  views an single post show page[0m
 
-User creates a post
-[31m  a logged in user created a post (FAILED - 1)[0m
-
-Blogament::Post
-[32m  has a title[0m
-[32m  belongs to an author[0m
-[32m  has many comments[0m
-
 User views posts
 [32m  views an index page of posts[0m
 
-Failures:
+Blogament::Post
+[32m  has many comments[0m
+[32m  belongs to an author[0m
+[32m  has a title[0m
 
-  1) User creates a post a logged in user created a post
-     [31mFailure/Error: visit blogament.root_path[0m
-     [31mLoadError:[0m
-     [31m  Capybara's selenium driver is unable to load `selenium-webdriver`, please install the gem and add `gem 'selenium-webdriver'` to your Gemfile if you are using bundler.[0m
-     [36m# ./spec/features/blogament/user_creates_new_post_spec.rb:14:in `block (2 levels) in <top (required)>'[0m
+User creates a post
+[32m  a logged in user created a post[0m
 
-Finished in 0.28985 seconds (files took 1.39 seconds to load)
-[31m6 examples, 1 failure[0m
+Finished in 0.32171 seconds (files took 1.41 seconds to load)
+[32m6 examples, 0 failures[0m
 
-Failed examples:
-
-[31mrspec ./spec/features/blogament/user_creates_new_post_spec.rb:9[0m [36m# User creates a post a logged in user created a post[0m
-
-Randomized with seed 52104
+Randomized with seed 40400
 

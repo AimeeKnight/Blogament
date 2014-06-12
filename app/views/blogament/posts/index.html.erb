@@ -16,7 +16,10 @@
     <% @posts.each do |post| %>
       <tr>
         <td><%= post.title %></td>
-        <td><%= post.author.by_line %></td>
+
+        <% if post.author %>
+          <td><%= post.author.by_line %></td>
+        <% end %>
         <td><%=raw post.text %></td>
         <td><%=image_tag post.image_url(:thumb).to_s %></td>
         <td><%= link_to 'Show', post %></td>

@@ -2,7 +2,9 @@
 
 <p>
   <b>Author</b>
-  <%= @post.author.by_line %>
+  <% if @post.author %>
+    <%= @post.author.by_line %>
+  <% end %>
 </p>
 
 <p>
