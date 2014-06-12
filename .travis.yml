@@ -6,6 +6,6 @@ addons:
 before_script:
   #- cp config/database.example.yml config/database.yml
   #- cp config/application.travis.yml config/application.yml
-  #- psql -c 'create database squmblr_test;' -U postgres
+  #- psql -c 'create database blogament_test;' -U postgres
 
 script: 'bundle exec rspec spec'
