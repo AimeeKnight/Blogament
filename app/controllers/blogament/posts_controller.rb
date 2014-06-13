@@ -52,7 +52,7 @@ module Blogament
     private
       def can_user_create_posts?
         # current_user = Blogament.author_class.create(name: "Test Name") if Rails.env.test?
-        redirect_to root_url unless current_user.can_blog?
+        redirect_to root_url unless current_user && current_user.can_blog?
       end
 
       def correct_user

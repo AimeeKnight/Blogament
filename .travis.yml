@@ -1,5 +1,7 @@
 language: ruby
 rvm:
   - "2.1.1"
-before_script: 'rake db:create db:migrate'
+before_script:
+  - psql -c 'create database code_club_test;' -U postgres
+  - 'rake db:schema:create db:schema:load'
 script: 'RAILS_ENV=test bundle exec rspec spec'

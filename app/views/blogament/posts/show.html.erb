@@ -4,7 +4,7 @@
 
   <div class="col-lg-12 pull-right">
     <div class="btn-group pull-right">
-      <% if current_user && @post.author_id == current_user.id %>
+      <% if current_user && @post.author == current_user %>
         <%= link_to 'Edit', edit_post_path(@post), class: "btn btn-default" %>
         <%= link_to 'Back', posts_path, class: "btn btn-default" %>
       <% end %>
