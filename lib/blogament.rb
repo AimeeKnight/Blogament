@@ -6,7 +6,7 @@ require 'bootstrap-sass'
 require 'pg'
 require 'carrierwave'
 require 'mini_magick'
-#require 'fog'
+require 'fog'
 require 'bootswatch-rails'
 
 module Blogament
