@@ -3,5 +3,5 @@ rvm:
   - "2.1.1"
 before_script:
   - psql -c 'create database code_club_test;' -U postgres
-  - 'rake db:schema:create db:schema:load'
+  - 'rake db:schema:load'
 script: 'RAILS_ENV=test bundle exec rspec spec'
