@@ -1,18 +1,12 @@
-# SQLite version 3.x
-#   gem install sqlite3
-#
-#   Ensure the SQLite 3 gem is defined in your Gemfile
-#   gem 'sqlite3'
-#
 default: &default
   adapter: postgresql
-  encoding: unicode
   pool: 5
+  timeout: 5000
+  encoding: unicode
 
 development:
   <<: *default
   database: blogament_development
-  host: localhost
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -20,4 +14,3 @@ development:
 test:
   <<: *default
   database: blogament_test
-  host: localhost

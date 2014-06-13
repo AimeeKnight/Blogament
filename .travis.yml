@@ -1,6 +1,5 @@
 language: ruby
 rvm:
   - "2.1.1"
-env:
-  - DB=postgres
+before_script: 'rake db:create db:migrate'
 script: 'RAILS_ENV=test bundle exec rspec spec'
