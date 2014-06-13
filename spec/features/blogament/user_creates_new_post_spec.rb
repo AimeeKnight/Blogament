@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 feature "User creates a post" do
-  scenario "a logged in user created a post", :js do
+  scenario "a logged in user creates a post", :js do
     user = User.create!(email: 'aimee@example.com')
     set_current_user(user)
 

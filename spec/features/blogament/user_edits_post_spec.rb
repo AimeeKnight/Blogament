@@ -37,4 +37,13 @@ feature "User edits a post" do
     click_link "Full Post"
     expect(page).to_not have_content("Edit")
   end
+
+  scenario "a logged out user tries to edit a post" do
+    create(:post)
+    set_current_user(nil)
+
+    visit blogament.root_path
+    click_link "Full Post"
+    expect(page).to_not have_content("Edit")
+  end
 end
