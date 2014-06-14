@@ -73,6 +73,8 @@ Blogament's views can be customized as well. For instance, in order to customize
 the posts index page you can create a file at `app/views/blogament/posts/index.html.erb`,
 and it will be used in place of the default view provided.
 
+#### Deployment and S3 Image Upload with Heroku
+
 ## License
 
 Blogament is released under the [MIT License](http://www.opensource.org/licenses/MIT).
