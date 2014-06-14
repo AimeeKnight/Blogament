@@ -75,6 +75,33 @@ and it will be used in place of the default view provided.
 
 #### Deployment and S3 Image Upload with Heroku
 
+Blogament is designed to be used in conjunction with Carrierwave, Fog,
+and Amazon S3. While Blogament takes care of the ImageUploader class, it's
+up to you to configure Carrierwave by creating a file at `/config/initializers/carrierwave.rb`. 
+The configuration has worked beautifully
+for me when deploying to Heroku, and using the Figaro
+gem to store my environment variables.
+
+```ruby
+ CarrierWave.configure do |config|
+  if Rails.env.test?
+    config.storage = :file
+    config.enable_processing = false
+  elsif Rails.env.development?
+    config.storage = :file
+    config.enable_processing = true
+  else
+    config.storage = :fog
+    config.fog_credentials = {
+      :provider               => 'AWS',                        # required
+      :aws_access_key_id      => ENV['S3_KEY'],                # required
+      :aws_secret_access_key  => ENV['S3_SECRET'],             # required
+    }
+    config.fog_directory      = ENV['S3_BUCKET_NAME']          # required
+  end
+end
+```
+
 ## License
 
 Blogament is released under the [MIT License](http://www.opensource.org/licenses/MIT).
