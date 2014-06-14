@@ -1,7 +1,11 @@
-language: ruby
 rvm:
   - "2.1.1"
 before_script:
-  - psql -c 'create database code_club_test;' -U postgres
-  - 'rake db:schema:load'
-script: 'RAILS_ENV=test bundle exec rspec spec'
+  - psql -c 'create database travis_ci_test;' -U postgres
+  - cp config/database-travis.yml config/database.yml
+  - bin/rake db:migrate RAILS_ENV=test
+  - export DISPLAY=:99.0
+  - sh -e /etc/init.d/xvfb start
+script: bundle exec rspec
+cache: bundler
+language: ruby
