@@ -31,13 +31,17 @@ Once the migrations have been copied over, you need to run `rake db:migrate` as 
 Next, you need to create a configuration initializer `config\initializers\blogament.rb`
 to describes Blogament's configuration options.
 In order for your app's users to 'have many' blogs and comments, you'll need to set your 
-user object (as a string) as Blogaments author class:
+user object (as a string) as Blogament's author class:
 
 ```ruby
 Rails.application.config.before_initialize do
   Blogament.author_class = "User"
 end
 ```
+
+Note for those curious. Blogament will then take the string "User", call constantize
+on it, and then we have your user object. :punch:
+
 Finally, Blogament needs to know who can create posts and who can't.
 In order for Blogament to place nice with your current authentication
 implementation, you'll need to impelment the following on you user model:
@@ -89,7 +93,7 @@ will take you to `posts#index`.
 
 Blogament is designed to be used in conjunction with Carrierwave, Fog,
 and Amazon S3. While Blogament takes care of the ImageUploader class and all 
-necessary dependencies (no need to add anything besed blogament to your Gemfile), 
+necessary dependencies (no need to add anything besides blogament to your Gemfile), 
 it's up to you to configure Carrierwave by creating a file at 
 `/config/initializers/carrierwave.rb`. 
 The configuration has worked beautifully
