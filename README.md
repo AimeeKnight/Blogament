@@ -1,5 +1,5 @@
 ## Blogament
-![alt tag](https://github.com/AimeeKnight/Blogament/blob/master/blogament.png)
+<img src="https://github.com/AimeeKnight/Blogament/blob/master/blogament.png"/>
 
 Blogament is a Rails Engine designed to provide its host with blogging and commenting features.
 
