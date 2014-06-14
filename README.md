@@ -74,6 +74,17 @@ Blogament's views can be customized as well. For instance, in order to customize
 the posts index page you can create a file at `app/views/blogament/posts/index.html.erb`,
 and it will be used in place of the default view provided.
 
+#### Routing
+To access a route provided by blogament, you will need to call your route on the 
+Blogament object. For instance; 
+
+```ruby
+blogament.posts_path`
+```
+
+will take you to `posts#index`.
+
+
 #### Deployment and S3 Image Upload with Heroku
 
 Blogament is designed to be used in conjunction with Carrierwave, Fog,
