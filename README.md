@@ -79,7 +79,7 @@ To access a route provided by blogament, you will need to call your route on the
 Blogament object. For instance; 
 
 ```ruby
-blogament.posts_path`
+blogament.posts_path
 ```
 
 will take you to `posts#index`.
