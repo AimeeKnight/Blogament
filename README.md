@@ -1,4 +1,5 @@
 ## Blogament
+![alt tag](https://github.com/AimeeKnight/Blogament/blob/master/blogament.png)
 
 Blogament is a Rails Engine designed to provide its host with blogging and commenting features.
 
@@ -76,8 +77,10 @@ and it will be used in place of the default view provided.
 #### Deployment and S3 Image Upload with Heroku
 
 Blogament is designed to be used in conjunction with Carrierwave, Fog,
-and Amazon S3. While Blogament takes care of the ImageUploader class, it's
-up to you to configure Carrierwave by creating a file at `/config/initializers/carrierwave.rb`. 
+and Amazon S3. While Blogament takes care of the ImageUploader class and all 
+necessary dependencies (no need to add anything besed blogament to your Gemfile), 
+it's up to you to configure Carrierwave by creating a file at 
+`/config/initializers/carrierwave.rb`. 
 The configuration has worked beautifully
 for me when deploying to Heroku, and using the Figaro
 gem to store my environment variables.
