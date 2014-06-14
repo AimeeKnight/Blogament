@@ -1,5 +1,5 @@
 ## Blogament
-<img src="https://github.com/AimeeKnight/Blogament/blob/master/blogament.png"/>
+![Image](/blogament.png?raw=true)
 
 Blogament is a Rails Engine designed to provide its host with blogging and commenting features.
 
