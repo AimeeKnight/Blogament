@@ -15,7 +15,7 @@
     <div class="jumbotron">
       <h1><%= @post.title %></h1>
       <div class="blog-img">
-        <%= image_tag @post.image_url.to_s %>
+        <%= image_tag @post.image.url %>
       </div>
       <p>
         <%= raw @post.text %>
