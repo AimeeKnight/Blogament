@@ -8,4 +8,5 @@ spec/dummy/tmp/
 spec/dummy/.sass-cache
 spec/dummy/public/uploads/blogament/post/image/*
 tmp/uploads/blogament/post/image/*
+tmp/uploads/tmp/*
 tmp/rspec.txt
