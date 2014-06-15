@@ -18,6 +18,35 @@
 @import "bootstrap";
 @import "bootswatch/simplex/bootswatch";
 
+body {
+  background-image: image-url("blogament/linen.png");
+}
+h3 {
+  color: #d9230f;
+}
 .clear {
   clear: both;
+}
+////// INDEX //////
+#comment_text {
+  width: 350px;
+}
+////// SHOW //////
+.blog-container {
+  margin-top: 2%;
+  background-color: #ececec;
+  border-radius: 10px;
+  border: 3px solid #fff !important;
+  small {
+    color: #d9230f;
+  }
+}
+.blog-img {
+  float: right;
+  img {
+    border-radius: 10px;
+  }
+}
+.jumbotron{
+  background-color: #ececec;
 }

@@ -1,7 +1,7 @@
 require 'spec_helper'
 
-feature "User edits a post" do
-  scenario "a logged in user edits a post", :js do
+feature "Editing a post" do
+  scenario "as a logged in user", :js do
     user = User.create!(email: 'aimee@example.com')
     set_current_user(user)
 
@@ -28,22 +28,26 @@ feature "User edits a post" do
     expect(page).to have_content "Test Edit Text from TinyMCE."
   end
 
-  scenario "a logged in user tries to edit a post they didn't create" do
+  scenario "that the logged in user didn't create" do
     user = User.create!(email: 'aimee@example.com')
     create(:post)
     set_current_user(user)
 
     visit blogament.root_path
     click_link "Full Post"
+    expect(page).to have_content("Test Title")
+    expect(page).to have_content("I'm a little teapot")
     expect(page).to_not have_content("Edit")
   end
 
-  scenario "a logged out user tries to edit a post" do
+  scenario "as a logged out user" do
     create(:post)
     set_current_user(nil)
 
     visit blogament.root_path
     click_link "Full Post"
+    expect(page).to have_content("Test Title")
+    expect(page).to have_content("I'm a little teapot")
     expect(page).to_not have_content("Edit")
   end
 end

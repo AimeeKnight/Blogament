@@ -1,7 +1,7 @@
 require 'spec_helper'
 
-feature "User creates a post" do
-  scenario "a logged in user creates a post", :js do
+feature "Creating a post" do
+  scenario "as logged in user", :js do
     user = User.create!(email: 'aimee@example.com')
     set_current_user(user)
 
@@ -15,5 +15,14 @@ feature "User creates a post" do
     expect(current_path).to eq blogament.posts_path
     expect(page).to have_content "Test Title"
     expect(page).to have_content "Test Text from TinyMCE."
+  end
+  scenario "as a logged out user" do
+    create(:post)
+    set_current_user(nil)
+
+    visit blogament.root_path
+    expect(page).to_not have_content("New Post")
+    expect(page).to have_content("Test Title")
+    expect(page).to have_content("I'm a little teapot")
   end
 end

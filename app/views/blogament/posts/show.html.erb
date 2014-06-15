@@ -11,17 +11,17 @@
     </div>
   </div>
 
-  <div class="col-lg-12">
-    <div>
-      <%= image_tag @post.image_url(:thumb).to_s %>
-    </div>
-
+  <div class="col-lg-12 blog-container">
     <div class="jumbotron">
       <h1><%= @post.title %></h1>
+      <div class="blog-img">
+        <%= image_tag @post.image_url.to_s %>
+      </div>
       <p>
         <%= raw @post.text %>
       </p>
       <small><%= @post.author.by_line %></small>
+      <div class="clear"></div>
     </div>
   </div>
 
