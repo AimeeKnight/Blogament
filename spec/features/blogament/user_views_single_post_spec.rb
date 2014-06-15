@@ -19,6 +19,8 @@ feature "Viewing a single post's show page", :js do
     expect(page).to have_content("Comments")
     expect(page).to have_content("New Comment")
     expect(page).to have_content("Edit")
+    expect(page).to have_content("Delete")
+    expect(page).to have_content("Back")
   end
   scenario "that the logged in user didn't create" do
     user = User.create!(email: 'aimee@example.com')
@@ -30,6 +32,8 @@ feature "Viewing a single post's show page", :js do
     expect(page).to have_content("Test Title")
     expect(page).to have_content("I'm a little teapot")
     expect(page).to_not have_content("Edit")
+    expect(page).to_not have_content("Delete")
+    expect(page).to_not have_content("Back")
   end
   scenario "as a logged out user" do
     create(:post)
@@ -40,5 +44,7 @@ feature "Viewing a single post's show page", :js do
     expect(page).to have_content("Test Title")
     expect(page).to have_content("I'm a little teapot")
     expect(page).to_not have_content("Edit")
+    expect(page).to_not have_content("Delete")
+    expect(page).to_not have_content("Back")
   end
 end

@@ -38,6 +38,8 @@ feature "Editing a post" do
     expect(page).to have_content("Test Title")
     expect(page).to have_content("I'm a little teapot")
     expect(page).to_not have_content("Edit")
+    expect(page).to_not have_content("Delete")
+    expect(page).to_not have_content("Back")
   end
 
   scenario "as a logged out user" do
@@ -49,5 +51,7 @@ feature "Editing a post" do
     expect(page).to have_content("Test Title")
     expect(page).to have_content("I'm a little teapot")
     expect(page).to_not have_content("Edit")
+    expect(page).to_not have_content("Delete")
+    expect(page).to_not have_content("Back")
   end
 end

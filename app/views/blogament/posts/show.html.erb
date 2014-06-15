@@ -6,6 +6,11 @@
     <div class="btn-group pull-right">
       <% if current_user && @post.author == current_user %>
         <%= link_to 'Edit', edit_post_path(@post), class: "btn btn-default" %>
+        <%= link_to "Delete", @post,
+                              class: "btn btn-default",
+                              method: :delete,
+                              data: { confirm: "You sure?" },
+                              title: @post.title %>
         <%= link_to 'Back', posts_path, class: "btn btn-default" %>
       <% end %>
     </div>
