@@ -1,17 +1,17 @@
 # encoding: utf-8
 module Blogament
-  class ImageUploader < CarrierWave::Uploader::Base
+  class ImageUploader < ::CarrierWave::Uploader::Base
 
     # Include RMagick or MiniMagick support:
     # include CarrierWave::RMagick
-    include CarrierWave::MiniMagick
+    include ::CarrierWave::MiniMagick
 
     # Choose what kind of storage to use for this uploader:
     # storage :file
     # storage :fog
-    process :resize_to_fit => [300, 300]
+    # process :resize_to_fit => [300, 300]
 
-    include CarrierWave::MimeTypes
+    include ::CarrierWave::MimeTypes
     process :set_content_type
 
     # Override the directory where uploaded files will be stored.
@@ -39,6 +39,10 @@ module Blogament
     # Create different versions of your uploaded files:
     version :thumb do
       process :resize_to_fit => [50, 50]
+    end
+
+    version :main do
+      process :resize_to_fit => [300, 300]
     end
 
     # Add a white list of extensions which are allowed to be uploaded.

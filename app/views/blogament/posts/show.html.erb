@@ -20,7 +20,7 @@
     <div class="jumbotron">
       <h1><%= @post.title %></h1>
       <div class="blog-img">
-        <%= image_tag @post.image.url %>
+        <%= image_tag @post.image.url(:main) %>
       </div>
       <p>
         <%= raw @post.text %>
