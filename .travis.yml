@@ -4,5 +4,5 @@ rvm:
 before_script:
   - psql -c 'create database travis_ci_test;' -U postgres
   - cp spec/dummy/config/database.yml.travis spec/dummy/config/database.yml
-  - bundle exec rake db:create db:migrate
+  - bundle exec rake db:create db:migrate RAILS_ENV=test
 script: bundle exec rspec
