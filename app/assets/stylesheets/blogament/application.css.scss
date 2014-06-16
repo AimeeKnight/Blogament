@@ -21,8 +21,11 @@
 body {
   background-image: image-url("blogament/linen.png");
 }
-h3, label {
+label {
   color: #3a87ad;
+}
+h3 {
+  color: #eb6864;
 }
 .clear {
   clear: both;
@@ -50,4 +53,10 @@ h3, label {
 }
 .jumbotron{
   background-color: #ececec;
+}
+.comment {
+  background-color: #fff;
+  padding: 10px;
+  margin: 5px;
+  border-radius: 5px;
 }
