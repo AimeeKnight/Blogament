@@ -15,6 +15,7 @@ feature "Creating a post" do
     expect(current_path).to eq blogament.posts_path
     expect(page).to have_content "Test Title"
     expect(page).to have_content "Test Text from TinyMCE."
+    expect(page).to have_content("Your blog post's been published.")
   end
   scenario "as a logged out user" do
     create(:post)

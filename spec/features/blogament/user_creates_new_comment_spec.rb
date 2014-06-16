@@ -16,7 +16,8 @@ feature "Creating a comment" do
     expect(current_path).to eq blogament.post_path(post)
     expect(page).to have_content("Comments")
     expect(page).to have_content("New Comment")
-    expect(page).to have_content "Test Comment"
+    expect(page).to have_content("Test Comment")
+    expect(page).to have_content("Your comment's been added.")
   end
   scenario "as a logged out user" do
     set_current_user(nil)
@@ -30,6 +31,7 @@ feature "Creating a comment" do
     expect(current_path).to eq blogament.post_path(post)
     expect(page).to have_content("Comments")
     expect(page).to have_content("New Comment")
-    expect(page).to have_content "Test Comment"
+    expect(page).to have_content("Test Comment")
+    expect(page).to have_content("Your comment's been added.")
   end
 end

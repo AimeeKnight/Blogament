@@ -26,6 +26,7 @@ feature "Editing a post" do
     expect(current_path).to eq blogament.posts_path
     expect(page).to have_content "Test Title Edit"
     expect(page).to have_content "Test Edit Text from TinyMCE."
+    expect(page).to have_content "You post's been updated."
   end
 
   scenario "that the logged in user didn't create" do
