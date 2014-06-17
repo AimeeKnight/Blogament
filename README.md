@@ -1,4 +1,8 @@
 ## Blogament
+
+[![Build Status](https://travis-ci.org/AimeeKnight/Blogament.svg?branch=master)](https://travis-ci.org/AimeeKnight/Blogament.svg?branch=master)
+[![Coverage Status](https://coveralls.io/repos/AimeeKnight/Blogament/badge.png?branch=master)](https://coveralls.io/r/AimeeKnight/Blogament?branch=master)
+
 ![Image](/blogament.png?raw=true)
 
 Blogament is a Rails Engine designed to provide its host with blogging and commenting features.
