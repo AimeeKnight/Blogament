@@ -27,12 +27,10 @@ Blogament's migrations and generate you configuration initializer:
 rake blogament:install
 ```
 
-This is create a file at `config\initializers\blogament.rb`.
-Once the migrations have been copied over, you need to run `rake db:migrate` as usual.
+That will generate a file at `config\initializers\blogament.rb` along with
+blogament's migration files. You will then need to run `rake db:migrate` as usual.
 
 #### Configuration
-Next, you need to create a configuration initializer `config\initializers\blogament.rb`
-to describes Blogament's configuration options.
 In order for your app's users to 'have many' blogs and comments, you'll need to set your 
 user object (as a string) as Blogament's author class:
 
@@ -42,8 +40,10 @@ Rails.application.config.before_initialize do
 end
 ```
 
+I have gone ahead and assumed your author class is a user,
+but you are free to pass any Active Record model as a string.
 Note for those curious. Blogament will then take the string "User", call constantize
-on it, and then we have your user object. :punch:
+on it, and set up the post's relation.
 
 Finally, Blogament needs to know who can create posts and who can't.
 In order for Blogament to place nice with your current authentication
