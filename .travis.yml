@@ -7,4 +7,4 @@ before_script:
   - cd spec/dummy
   - bundle exec rake db:create db:migrate
   - cd ../..
-script: bundle exec rspec
+script: script: xvfb-run rspec
