@@ -6,7 +6,11 @@ module Blogament
 
     # GET /posts
     def index
-      @posts = Post.all
+      if params[:tag]
+        @posts = Post.tagged_with(params[:tag])
+      else
+        @posts = Post.all
+      end
     end
 
     # GET /posts/1
@@ -67,7 +71,7 @@ module Blogament
 
       # Only allow a trusted parameter "white list" through.
       def post_params
-        params.require(:post).permit(:title, :text, :image)
+        params.require(:post).permit(:title, :text, :image, :tag_list)
       end
   end
 end

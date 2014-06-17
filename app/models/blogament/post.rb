@@ -1,6 +1,7 @@
 module Blogament
   class Post < ActiveRecord::Base
     mount_uploader :image, ImageUploader
+    acts_as_taggable
     # attr_accessor :author_name
 
     has_many :comments
@@ -9,11 +10,11 @@ module Blogament
     # belongs_to :author, class_name: "User"
     # before_save :set_author
 
-    private
+     # private
 
-    def set_author
-      # self.author = Blogament.author_class.constantize.find_or_create_by(name: author_name)
-      self.author = Blogament.author_class.find_or_create_by(name: author_name)
-    end
+    #def set_author
+      ### self.author = Blogament.author_class.constantize.find_or_create_by(name: author_name)
+      #self.author = Blogament.author_class.find_or_create_by(name: author_name)
+    #end
   end
 end

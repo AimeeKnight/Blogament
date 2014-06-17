@@ -8,6 +8,7 @@ require 'carrierwave'
 require 'mini_magick'
 require 'fog'
 require 'bootswatch-rails'
+require 'acts-as-taggable-on'
 
 module Blogament
   mattr_writer :author_class
