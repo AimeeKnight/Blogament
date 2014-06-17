@@ -20,11 +20,14 @@ To make your app Blogament's functionality, you need to mount the engine inside 
 mount Blogament::Engine, at: "/blog"
 ```
 
-After adding Blogament to your Gemfile and mounting it within your app, you need to copy over Blogament's migrations:
+After adding Blogament to your Gemfile and mounting it within your app, you need to copy over 
+Blogament's migrations and generate you configuration initializer:
 
 ```console
-rake blogament:install:migrations
+rake blogament:install
 ```
+
+This is create a file at `config\initializers\blogament.rb`.
 Once the migrations have been copied over, you need to run `rake db:migrate` as usual.
 
 #### Configuration

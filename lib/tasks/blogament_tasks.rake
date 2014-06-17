@@ -2,7 +2,9 @@
 # task :blogament do
 #   # Task goes here
 # end
+
 task "blogament:install" => "blogament:install:migrations" do
+
   File.open(File.join(Rails.root, "config/initializers/blogament.rb"), "wb") do |io|
     io.write(%{
 Rails.application.config.before_initialize do
