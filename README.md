@@ -25,7 +25,7 @@ mount Blogament::Engine, at: "/blog"
 ```
 
 After adding Blogament to your Gemfile and mounting it within your app, you need to copy over 
-Blogament's migrations and generate you configuration initializer:
+Blogament's migrations and generate your configuration initializer:
 
 ```console
 rake blogament:install

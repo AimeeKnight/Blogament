@@ -20,7 +20,7 @@ feature "Editing a post" do
     click_link "Edit"
     expect(page).to have_content("Edit")
     fill_in 'Title', :with => 'Test Title Edit'
-    #attach_file "Image", '/Users/aimeeknight/Desktop/NSS-Ruby/blogament/spec/data/skating.jpg'
+    attach_file "Image", Rails.root.join("app/assets/images/skating.jpg")
     page.execute_script('$("#tinymce4").tinymce().setContent("Test Edit Text from TinyMCE.")')
     click_button 'Update Post'
     expect(current_path).to eq blogament.posts_path
