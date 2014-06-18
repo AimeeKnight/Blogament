@@ -29,6 +29,7 @@ Gem::Specification.new do |s|
   s.add_dependency "acts-as-taggable-on"
   s.add_dependency "jquery-ui-rails"
   s.add_dependency "select2-rails"
+  s.add_dependency "social-share-button"
 
   s.add_development_dependency "pg"
   s.add_development_dependency "rspec-rails", "~> 3.0"

@@ -11,6 +11,7 @@ require "bootswatch-rails"
 require "acts-as-taggable-on"
 require "jquery-ui-rails"
 require "select2-rails"
+require "social-share-button"
 
 module Blogament
   mattr_writer :author_class

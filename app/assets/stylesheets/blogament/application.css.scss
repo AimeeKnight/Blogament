@@ -14,6 +14,7 @@
  *= require_self
  *= require select2
  *= require select2-bootstrap
+ *= require social-share-button
  */
 
 @import "bootswatch/journal/variables";
@@ -96,3 +97,9 @@ span {
 .alert-temp{
   margin: 20px 2px 20px 2px;
 }
+
+.social-share-button a {
+  margin: 5px;
+  font-size: 0;
+}
+

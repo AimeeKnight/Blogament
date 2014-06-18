@@ -15,5 +15,6 @@
 //= require jquery.ui.all
 //= require tinymce-jquery
 //= require select2
+//= require social-share-button
 //= require_tree .
 

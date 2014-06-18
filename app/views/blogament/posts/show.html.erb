@@ -28,6 +28,9 @@
       </p>
       <small><%= @post.author.by_line %></small>
       <div class="clear"></div>
+      <div>
+        <%= social_share_button_tag(@post.title) %>
+      </div>
     </div>
   </div>
 
