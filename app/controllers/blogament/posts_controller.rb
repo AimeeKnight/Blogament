@@ -32,7 +32,8 @@ module Blogament
       @post.author_id = current_user.id
 
       if @post.save
-        redirect_to posts_path, notice: "Your blog post's been published."
+        flash[:success] = "Your blog post's been published."
+        redirect_to posts_path
       else
         render action: 'new'
       end
@@ -41,7 +42,8 @@ module Blogament
     # PATCH/PUT /posts/1
     def update
       if @post.update(post_params)
-        redirect_to posts_path, notice: "You post's been updated."
+        flash[:success] = "Your post's been updated."
+        redirect_to posts_path
       else
         render action: 'edit'
       end
@@ -50,7 +52,8 @@ module Blogament
     # DELETE /posts/1
     def destroy
       @post.destroy
-      redirect_to posts_url, notice: 'Post was successfully destroyed.'
+      flash[:success] = "Post was successfully destroyed."
+      redirect_to posts_url
     end
 
     private

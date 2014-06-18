@@ -26,7 +26,12 @@
   </div>
 
   <div class="container">
-  <p id="notice"><%= notice %></p>
+
+  <div id="notice">
+    <% flash.each do |key, value| %>
+      <div class="alert-temp alert fade in alert-<%= key %>"><%= value %></div>
+    <% end %>
+  </div>
 
     <%= yield %>
 

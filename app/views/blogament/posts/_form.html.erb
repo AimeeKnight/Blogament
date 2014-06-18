@@ -3,12 +3,13 @@
     <fieldset>
       <legend></legend>
         <% if @post.errors.any? %>
-          <div id="error_explanation">
-            <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
-
-            <ul>
+          <div id="error_explanation notice">
+            <div class="alert alert-temp fade in alert-error">
+              <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
+            </div>
+            <ul class="unstyled">
             <% @post.errors.full_messages.each do |msg| %>
-              <li><%= msg %></li>
+              <li class="alert alert-error"><%= msg %></li>
             <% end %>
             </ul>
           </div>

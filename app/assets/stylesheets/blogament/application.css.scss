@@ -84,3 +84,15 @@ span {
   background-image: none !important;
   background-color: #dff0d8 !important;
 }
+
+////// ALERTS //////
+#notice{
+  left:0;
+  top:60px;
+  position:absolute;
+  z-index:10000;
+  width:100%;
+}
+.alert-temp{
+  margin: 20px 2px 20px 2px;
+}

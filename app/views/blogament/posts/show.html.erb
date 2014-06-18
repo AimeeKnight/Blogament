@@ -18,7 +18,7 @@
     <div class="jumbotron">
       <h1 class="animated fadeInRight"><%= @post.title %></h1>
 
-      <%= raw @post.tags.map(&:name).map { |t| link_to t, tag_path(t), class: "label label-info" }.join(', ') %>
+      <%= raw @post.tags.map(&:name).map { |t| link_to t, tag_path(t), class: "label label-info" }.join(' ') %>
 
       <div class="blog-img">
         <%= image_tag @post.image.url(:main) %>
