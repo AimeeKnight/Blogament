@@ -10,4 +10,4 @@ spec/dummy/public/uploads/blogament/post/image/*
 tmp/uploads/blogament/post/image/*
 tmp/uploads/tmp/*
 tmp/rspec.txt
-coverage/.resultset.json
+coverage/*
