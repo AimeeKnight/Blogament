@@ -16,22 +16,22 @@
 
         <div class="field form-group">
           <%= f.label :title, class: "col-lg-1 control-label input-lg" %><br>
-          <div class="col-lg-11 input-lg">
-            <%= f.text_field :title %>
+          <div class="col-lg-11">
+            <%= f.text_field :title, class: "form-control input-lg" %>
           </div>
         </div>
 
         <div class="field form-group">
           <%= f.label :tag_list, class: "col-lg-1 control-label input-lg" %><br>
-          <div class="col-lg-11 input-lg">
-            <%= f.text_field :tag_list, { :placeholder => "Tags separated by commas" } %>
+          <div class="col-lg-11">
+            <%= f.text_field :tag_list, { :placeholder => "Tags separated by commas", class: "form-control input-lg" } %>
           </div>
         </div>
 
         <div class="field form-group">
           <%= f.label :image, class: "col-lg-1 control-label input-lg" %><br>
-          <div class="col-lg-11 input-lg">
-            <%= f.file_field :image %>
+          <div class="col-lg-11">
+            <%= f.file_field :image, class: "input-lg" %>
           </div>
         </div>
 

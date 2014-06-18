@@ -13,6 +13,9 @@
         <blockquote>
           <p><%= raw post.text %></p>
         </blockquote>
+
+      <%= raw post.tags.map(&:name).map { |t| link_to t, tag_path(t), class: "label label-default" }.join(', ') %>
+
       </div>
       <div class="panel-footer">
         -
