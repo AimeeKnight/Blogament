@@ -4,6 +4,7 @@
 $(document).ready(function(){
   $("#post_image").change(animateProgressBar);
   displayTinyMCE();
+  displaySelectTwo();
 
   function animateProgressBar(){
     $('.progress-bar').css('width', '100%');
@@ -18,6 +19,13 @@ $(document).ready(function(){
       remove_script_host: false,
       document_base_url: (!window.location.origin ? window.location.protocol + "//" + window.location.host : window.location.origin) + "/",
     })
+  }
+
+  function displaySelectTwo(){
+    $("input#post_tag_list").select2({
+      tags:[],
+      tokenSeparators: [",", " "]
+    });
   }
 
 });

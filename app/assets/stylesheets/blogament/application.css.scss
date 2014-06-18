@@ -12,6 +12,8 @@
  *
  *= require_tree .
  *= require_self
+ *= require select2
+ *= require select2-bootstrap
  */
 
 @import "bootswatch/journal/variables";
@@ -71,4 +73,14 @@ span {
 .label-info, .label-default {
   font-size: 14px !important;
   margin-top: 10px;
+}
+
+////// EDIT //////
+.select2-container-multi .select2-choices .select2-search-choice {
+  margin: 10px 10px 10px 10px !important;
+  padding: 5px 5px 5px 18px !important;
+  color: #7f7f7f !important;
+  border: 2px solid #7f7f7f !important;
+  background-image: none !important;
+  background-color: #dff0d8 !important;
 }

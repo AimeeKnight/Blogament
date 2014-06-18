@@ -14,5 +14,6 @@
 //= require jquery_ujs
 //= require jquery.ui.all
 //= require tinymce-jquery
+//= require select2
 //= require_tree .
 
