@@ -28,7 +28,7 @@ After adding Blogament to your Gemfile and mounting it within your app, you need
 Blogament's migrations and generate your configuration initializer:
 
 ```console
-rake blogament:install
+rails g blogament:install
 ```
 
 That will generate a file at `config\initializers\blogament.rb` along with
@@ -58,7 +58,9 @@ def can_blog?
   # responds with true or false
 end
 ```
-In addition, Blogament assumes your sessions will have a `current user` object.
+#### Security
+
+Blogament assumes your sessions will have a `current user` object.
 If you don't have this currently, it will need to be implemented.
 
 #### Rails Console

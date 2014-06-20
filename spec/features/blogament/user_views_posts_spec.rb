@@ -1,11 +1,13 @@
 require 'spec_helper'
 
+#mock_oauth: true
 feature "Viewing all posts" do
   let!(:post) { FactoryGirl.create(:post) }
 
   scenario "as a logged in user" do
     user = User.create!(email: 'aimee@example.com')
     set_current_user(user)
+    #Blogament::ApplicationController.send(:helper_method, :current_user) {}
 
     visit blogament.root_path
     expect(page).to have_content("Blogs")
