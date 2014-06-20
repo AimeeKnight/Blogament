@@ -16,13 +16,6 @@ PATH
       social-share-button
       tinymce-rails
 
-PATH
-  remote: ../../Projects/rspectacular
-  specs:
-    rspectacular (0.44.0)
-      fuubar (~> 2.0.beta)
-      rspec (~> 3.0.beta)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -189,6 +182,9 @@ GEM
       rspec-mocks (~> 3.0.0)
       rspec-support (~> 3.0.0)
     rspec-support (3.0.0)
+    rspectacular (0.39.0)
+      fuubar (~> 2.0.beta)
+      rspec (~> 3.0.beta)
     ruby-progressbar (1.5.1)
     rubyzip (1.1.4)
     sass (3.2.19)
@@ -251,5 +247,5 @@ DEPENDENCIES
   factory_girl_rails
   pg
   rspec-rails (~> 3.0)
-  rspectacular!
+  rspectacular
   selenium-webdriver
