@@ -6,8 +6,8 @@ source "https://rubygems.org"
 gemspec
 
 gem 'coveralls', require: false
-#gem 'rspectacular', require: false
-gem 'rspectacular', require: false, path: "../../Projects/rspectacular"
+gem 'rspectacular', require: false
+#gem 'rspectacular', require: false, path: "../../Projects/rspectacular"
 
 # Declare any dependencies that are still in development here instead of in
 # your gemspec. These might include edge Rails or gems from your path or
