@@ -1,6 +1,6 @@
 # desc "Explaining what the task does"
 # task :blogament do
-#   # Task goes here
+#   ### Task goes here
 # end
 
 task "blogament:install" => "blogament:install:migrations" do
