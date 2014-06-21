@@ -26,7 +26,7 @@
       <p>
         <%= raw @post.text %>
       </p>
-      <small><%= @post.author.by_line %></small>
+      <small> &bull; <%= @post.author.by_line %></small>
       <div class="clear"></div>
       <div>
         <%= social_share_button_tag(@post.title) %>
@@ -40,7 +40,12 @@
   <h3>Comments</h3>
     <%= render @post.comments %>
   <hr>
-    <%= render "blogament/comments/form" %>
+    <% if current_user %>
+      <%= render "blogament/comments/form" %>
+    <% else %>
+      <%= link_to 'Login to Comment', main_app.root_path, class: "btn btn-default" %>
+    <% end %>
+  <br>
   <br>
   </div>
 </div>
