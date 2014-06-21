@@ -3,10 +3,7 @@ require 'spec_helper'
 feature "Creating a comment" do
   let!(:post) { FactoryGirl.create(:post) }
 
-  scenario "as logged in user", :js do
-    user = User.create!(email: 'aimee@example.com')
-    set_current_user(user)
-
+  scenario "as logged in user", mock_auth: true do
     visit blogament.root_path
     click_link "Full Post"
     expect(page).to have_content("Comments")
@@ -19,9 +16,7 @@ feature "Creating a comment" do
     expect(page).to have_content("Test Comment")
     expect(page).to have_content("Your comment's been added.")
   end
-  scenario "as a logged out user" do
-    set_current_user(nil)
-
+  scenario "as a logged out user", mock_auth: { status: :unauthorized } do
     visit blogament.root_path
     click_link "Full Post"
     expect(page).to have_content("Comments")
