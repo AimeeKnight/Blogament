@@ -10,6 +10,7 @@
         1,
         1,
         null,
+        null,
         null
       ],
       "/Users/aimeeknight/Desktop/NSS-Ruby/blogament/app/uploaders/blogament/image_uploader.rb": [
@@ -80,6 +81,14 @@
         1,
         1,
         1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
         null,
         null
       ],
@@ -219,6 +228,6 @@
         null
       ]
     },
-    "timestamp": 1403392496
+    "timestamp": 1403407849
   }
 }
