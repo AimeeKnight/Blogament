@@ -13,5 +13,10 @@ module Blogament
       expect(comment).to respond_to(:posts)
     end
 
+    it "belongs to an author" do
+      post = Post.new(title: "Test Title")
+      expect(post).to respond_to(:author)
+    end
+
   end
 end

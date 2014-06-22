@@ -18,7 +18,9 @@
     <div class="jumbotron">
       <h1 class="animated fadeInRight"><%= @post.title %></h1>
 
-      <%= raw @post.tags.map(&:name).map { |t| link_to t, tag_path(t), class: "label label-info" }.join(' ') %>
+      <div id="tags">
+        <%= raw @post.tags.map(&:name).map { |t| link_to t, tag_path(t), class: "label label-info" }.join(' ') %>
+      </div>
 
       <div class="blog-img">
         <%= image_tag @post.image.url(:main) %>
@@ -26,7 +28,8 @@
       <p>
         <%= raw @post.text %>
       </p>
-      <small><%= @post.author.by_line %></small>
+      <hr>
+      <small> &bull; <%= @post.author.by_line %></small>
       <div class="clear"></div>
       <div>
         <%= social_share_button_tag(@post.title) %>
@@ -40,7 +43,12 @@
   <h3>Comments</h3>
     <%= render @post.comments %>
   <hr>
-    <%= render "blogament/comments/form" %>
+    <% if current_user %>
+      <%= render "blogament/comments/form" %>
+    <% else %>
+      <%= link_to 'Login to Comment', main_app.root_path, class: "btn btn-default" %>
+    <% end %>
+  <br>
   <br>
   </div>
 </div>

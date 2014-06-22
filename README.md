@@ -73,6 +73,9 @@ Blogament::Post.find(1)
 
 #### Views
 
+First, as with the `current user` method, it's assumed that your user model
+with have an email property. If not, you will need to add one.
+
 Blogs listed on the index and show page will display a 'by line' which
 identifies the blogs author. It's up to you to tell blogament what you'd like the by line to display.
 In order to do so, you'll also need to implement the following in your model:
