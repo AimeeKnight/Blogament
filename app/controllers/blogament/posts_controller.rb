@@ -8,6 +8,9 @@ module Blogament
     def index
       if params[:tag]
         @posts = Post.tagged_with(params[:tag])
+      elsif query = params[:query]
+        @search = Blogament::Post.search(query, misspellings: {distance: 4}, suggest: true)
+        @posts  = Blogament::Post.where(id: @search.map(&:id))
       else
         @posts = Post.all
       end
@@ -54,6 +57,10 @@ module Blogament
       @post.destroy
       flash[:success] = "Post was successfully destroyed."
       redirect_to posts_url
+    end
+
+    def autocomplete
+      render json: Blogament::Post.search(params[:query], autocomplete: true, limit: 10).map(&:title)
     end
 
     private

@@ -12,6 +12,7 @@ require "acts-as-taggable-on"
 require "jquery-ui-rails"
 require "select2-rails"
 require "social-share-button"
+require "searchkick"
 
 module Blogament
   mattr_writer :author_class

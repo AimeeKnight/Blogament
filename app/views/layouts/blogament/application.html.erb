@@ -4,6 +4,7 @@
   <title>Blogament</title>
   <%= stylesheet_link_tag    "blogament/application", media: "all" %>
   <%= javascript_include_tag "blogament/application" %>
+  <%= javascript_include_tag "//cdnjs.cloudflare.com/ajax/libs/typeahead.js/0.9.3/typeahead.min.js" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
@@ -20,8 +21,17 @@
       <ul class="nav navbar-nav">
         <li class="active"><%= link_to "Posts", posts_path %></li>
       </ul>
-      <ul class="nav navbar-nav navbar-right">
-      </ul>
+      <%= form_tag posts_path, method: "get", class: "navbar-form navbar-right" do %>
+        <div class="form-group">
+          <div class="input-group">
+            <span class="input-group-addon"></span>
+              <%= text_field_tag :query, params[:query], placeholder: "Search", class: "form-control" %>
+            <span class="input-group-btn">
+             <%= submit_tag 'Search', class: "btn btn-default" %>
+            </span>
+          </div>
+        </div>
+      <% end %>
     </div>
   </div>
 

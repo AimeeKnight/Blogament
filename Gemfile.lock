@@ -12,6 +12,7 @@ PATH
       mini_magick
       rails (~> 4.1.1)
       sass-rails (= 4.0.3)
+      searchkick
       select2-rails
       social-share-button
       tinymce-rails
@@ -85,6 +86,14 @@ GEM
     database_cleaner (1.3.0)
     diff-lcs (1.2.5)
     docile (1.1.5)
+    elasticsearch (0.4.11)
+      elasticsearch-api (= 0.4.11)
+      elasticsearch-transport (= 0.4.11)
+    elasticsearch-api (0.4.11)
+      multi_json
+    elasticsearch-transport (0.4.11)
+      faraday
+      multi_json
     erubis (2.7.0)
     excon (0.37.0)
     execjs (2.2.0)
@@ -93,6 +102,8 @@ GEM
     factory_girl_rails (4.4.1)
       factory_girl (~> 4.4.0)
       railties (>= 3.0.0)
+    faraday (0.9.0)
+      multipart-post (>= 1.2, < 3)
     ffi (1.9.3)
     fog (1.22.1)
       fog-brightbox
@@ -116,6 +127,7 @@ GEM
     fuubar (2.0.0.rc1)
       rspec (~> 3.0.rc1)
       ruby-progressbar (~> 1.4)
+    hashie (3.0.0)
     hike (1.2.3)
     i18n (0.6.9)
     ipaddress (0.8.0)
@@ -134,6 +146,7 @@ GEM
     mini_portile (0.6.0)
     minitest (5.3.4)
     multi_json (1.10.1)
+    multipart-post (2.0.0)
     net-scp (1.2.1)
       net-ssh (>= 2.6.5)
     net-ssh (2.9.1)
@@ -193,6 +206,10 @@ GEM
       sass (~> 3.2.0)
       sprockets (~> 2.8, <= 2.11.0)
       sprockets-rails (~> 2.0)
+    searchkick (0.7.8)
+      activemodel
+      elasticsearch (~> 0.4.11)
+      hashie
     select2-rails (3.5.7)
       thor (~> 0.14)
     selenium-webdriver (2.42.0)
@@ -224,7 +241,7 @@ GEM
     thread_safe (0.3.4)
     tilt (1.4.1)
     tins (1.3.0)
-    tinymce-rails (4.0.28.1)
+    tinymce-rails (4.1.0)
       railties (>= 3.1.1)
     treetop (1.4.15)
       polyglot

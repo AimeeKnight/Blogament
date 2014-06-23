@@ -44,6 +44,12 @@ span {
 #comment_text {
   width: 350px;
 }
+.input-group-addon {
+  background-image: asset-data-url("blogament/search.png");
+  background-repeat: no-repeat;
+  background-position: 5px 5px; 
+  padding: 10px 15px 1px 15px;
+}
 
 ////// SHOW //////
 .blog-container {
