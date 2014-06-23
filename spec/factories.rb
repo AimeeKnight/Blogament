@@ -12,4 +12,5 @@ FactoryGirl.define do
   factory :comment, class: Blogament::Comment do
     text    "I'm trolling"
   end
+
 end
