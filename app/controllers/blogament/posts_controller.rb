@@ -59,9 +59,9 @@ module Blogament
       redirect_to posts_url
     end
 
-    def autocomplete
-      render json: Blogament::Post.search(params[:query], autocomplete: true, limit: 10).map(&:title)
-    end
+    #def autocomplete
+     # render json: Blogament::Post.search(params[:query], autocomplete: true, limit: 10).map(&:title)
+    #end
 
     private
       def can_user_create_posts?
