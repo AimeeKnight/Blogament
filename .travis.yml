@@ -1,4 +1,6 @@
 language: ruby
+services:
+  - elasticsearch
 rvm:
   - "2.1.1"
 before_script:
