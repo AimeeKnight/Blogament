@@ -33,15 +33,4 @@ feature "Searching posts" do
     expect(page).to_not have_content("JS")
   end
 
-  scenario "as a logged out user" do
-    user = User.create!(email: "aimee@example.com")
-    set_current_user(nil)
-
-    visit blogament.root_path
-    #click_link "Ruby"
-    expect(page).to have_content("Blogs")
-    expect(page).to have_content("Test Title")
-    expect(page).to have_content("I'm a little teapot")
-    #expect(page).to have_content("Ruby")
-  end
 end

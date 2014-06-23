@@ -4,8 +4,8 @@ FactoryGirl.define do
   end
 
   factory :post, class: Blogament::Post do
-    title   "Test Title"
-    text    "I'm a little teapot"
+    title     "Test Title"
+    text      "I'm a little teapot"
     author
   end
 
