@@ -101,7 +101,9 @@ blogament.posts_path
 will take you to `posts#index`.
 
 
-#### Deployment and S3 Image Upload with Heroku
+## Deployment
+
+#### S3 Image Upload with Heroku
 
 Blogament is designed to be used in conjunction with Carrierwave, Fog,
 and Amazon S3. While Blogament takes care of the ImageUploader class and all 
@@ -130,6 +132,22 @@ gem to store my environment variables.
     config.fog_directory      = ENV['S3_BUCKET_NAME']          # required
   end
 end
+```
+
+#### Elastic Search and  Heroku
+
+Blogament utilizes Elasticsearch for full text database queries,
+and has been tested with bonsai on Heroku.
+Setup is as follows:
+
+```sh
+heroku addons:add bonsai
+heroku config:add ELASTICSEARCH_URL=`heroku config:get BONSAI_URL`
+```
+Then deploy and reindex:
+
+```sh
+heroku run rake searchkick:reindex CLASS=Blogament::Post
 ```
 
 ## License
