@@ -1,4 +1,11 @@
 <div class="row">
+
+  <div class="field form-group">
+  <%= s3_uploader_form callback_url: @post_url, callback_param: "post[image_url]", id: "s3-uploader" do %>
+    <%= file_field_tag :file, multiple: true %>
+  <% end %>
+  </div>
+
   <%= form_for @post, :html => {class: "form-horizontal", :multipart => true} do |f| %>
     <fieldset>
       <legend></legend>
@@ -54,6 +61,4 @@
         </div>
       <% end %>
 
-      </fieldset>
-    </form>
   </div>

@@ -47,6 +47,20 @@
 
   </div>
 
-  </body>
   <%= tinymce %>
+  <script id="template-upload" type="text/x-tmpl">
+    <div id="file-{%=o.unique_id%}" class="upload">
+      {%=o.name%}
+      <div class="progress"><div class="bar" style="width: 0%"></div></div>
+    </div>
+  </script>
+
+  <%= javascript_tag do %>
+    $('#s3-uploader').bind("s3_upload_complete", function(e, content) {
+      $('input#post_image.input-lg').val(content.url);
+      $('input#file').text('File Uploaded');
+    });
+  <% end %>
+
+  </body>
 </html>

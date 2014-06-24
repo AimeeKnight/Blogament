@@ -45,6 +45,8 @@ module Blogament
     # PATCH/PUT /posts/1
     def update
       if @post.update(post_params)
+         @post.remote_image_url = post_params[:image]
+         @post.save!
         flash[:success] = "Your post's been updated."
         redirect_to posts_path
       else

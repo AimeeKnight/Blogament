@@ -13,6 +13,7 @@ require "jquery-ui-rails"
 require "select2-rails"
 require "social-share-button"
 require "searchkick"
+require "s3_direct_upload"
 
 module Blogament
   mattr_writer :author_class
@@ -20,4 +21,5 @@ module Blogament
   def self.author_class
     @@author_class.constantize
   end
+
 end

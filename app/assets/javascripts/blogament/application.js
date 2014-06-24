@@ -16,5 +16,9 @@
 //= require tinymce-jquery
 //= require select2
 //= require social-share-button
+//= require s3_direct_upload
 //= require_tree .
 
+$(function() {
+  return $("#s3-uploader").S3Uploader();
+});

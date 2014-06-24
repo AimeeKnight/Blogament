@@ -15,6 +15,7 @@
  *= require select2
  *= require select2-bootstrap
  *= require social-share-button
+ *= require s3_direct_upload_progress_bars
  */
 
 @import "bootswatch/journal/variables";
@@ -100,6 +101,9 @@ span {
   border: 2px solid #7f7f7f !important;
   background-image: none !important;
   background-color: #dff0d8 !important;
+}
+.s3 {
+  margin-bottom: 40px !important;
 }
 
 ////// ALERTS //////
