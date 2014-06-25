@@ -56,9 +56,15 @@
   </script>
 
   <%= javascript_tag do %>
+    $('#s3-uploader').bind('s3_upload_complete', function(e) {
+      $("#s3-uploader").hide();
+      $(".s3").text("Your file's been uploaded.");
+    });
+  <% end %>
+
+  <%= javascript_tag do %>
     $('#s3-uploader').bind("s3_upload_complete", function(e, content) {
       $('input#post_image.input-lg').val(content.url);
-      $('input#file').text('File Uploaded');
     });
   <% end %>
 

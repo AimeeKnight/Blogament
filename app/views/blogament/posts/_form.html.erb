@@ -1,6 +1,6 @@
 <div class="row">
 
-  <div class="field form-group">
+  <div class="field form-group s3">
   <%= s3_uploader_form callback_url: @post_url, callback_param: "post[image_url]", id: "s3-uploader" do %>
     <%= file_field_tag :file, multiple: true %>
   <% end %>
@@ -36,14 +36,14 @@
           </div>
         </div>
 
-        <div class="field form-group">
+        <div class="field form-group hidden">
           <%= f.label :image, class: "col-lg-1 control-label input-lg" %><br>
           <div class="col-lg-11">
-            <%= f.file_field :image, class: "input-lg" %>
+            <%= f.text_field :image, class: "input-lg" %>
           </div>
         </div>
 
-        <div class="progress progress-striped active">
+        <div class="progress progress-striped active hidden">
           <div class="progress-bar progress-bar-success" style="width: 0%"></div>
         </div>
 

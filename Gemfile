@@ -5,8 +5,10 @@ source "https://rubygems.org"
 # development dependencies will be added by default to the :development group.
 gemspec
 
+gem "figaro"
 gem 'coveralls', require: false
 gem 'rspectacular', require: false
+
 #gem 'rspectacular', require: false, path: "../../Projects/rspectacular"
 
 # Declare any dependencies that are still in development here instead of in

@@ -1,0 +1,4 @@
+# Add application configuration variables here, as shown below.
+S3_BUCKET_NAME:             "amk-nss"
+S3_KEY:                     "AKIAJD5JDWZNW6ZOCY4A"
+S3_SECRET:                  "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"
