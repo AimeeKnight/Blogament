@@ -16,23 +16,19 @@ Blogament works with Rails 4.1.1 onwards. You can add it to your Gemfile with:
 ```ruby
 gem 'blogament', :git => 'git://github.com/AimeeKnight/Blogament.git'
 ```
-Run the `bundle` command to install it.
+Run the `bundle` command to install it.   
 
-To make your app Blogament's functionality, you need to mount the engine inside you app in `routes.rb` as follows:
-
-```ruby
-mount Blogament::Engine, at: "/blog"
-```
-
-After adding Blogament to your Gemfile and mounting it within your app, you need to copy over 
+After adding Blogament to your Gemfile you need to copy over
 Blogament's migrations and generate your configuration initializer:
 
 ```console
 rails g blogament:install
 ```
 
-That will generate a file at `config\initializers\blogament.rb` along with
-blogament's migration files. You will then need to run `rake db:migrate` as usual.
+That will generate a file at `config\initializers\blogament.rb`,
+mount the engine inside you app in `routes.rb`, and copy over
+blogament's migration files.
+You will then need to run `rake db:migrate` as usual.
 
 #### Configuration
 In order for your app's users to 'have many' blogs and comments, you'll need to set your 
@@ -46,9 +42,18 @@ end
 
 I have gone ahead and assumed your author class is a user,
 but you are free to pass any Active Record model as a string.
-Note for those curious. Blogament will then take the string "User", call constantize
+Blogament will then take the string "User", call constantize
 on it, and set up the post's relation.
 
+Note: You must pass your user object as a string, due to the way engines load their 
+configuration files. Without the host's class passed as a string, Ruby will throw an error
+since the host's model isn't yet loaded.
+
+The blog's default route is set to `/blog`. You can set this to something else if you'd like.
+
+```ruby
+mount Blogament::Engine, at: "/blog"
+```
 Finally, Blogament needs to know who can create posts and who can't.
 In order for Blogament to place nice with your current authentication
 implementation, you'll need to implement the following on you user model:
