@@ -80,7 +80,7 @@ module Blogament
 
       # Only allow a trusted parameter "white list" through.
       def post_params
-        params.require(:post).permit(:title, :text, :image, :tag_list)
+        params.require(:post).permit(:title, :text, :image, :tag_list, :image_cache)
       end
   end
 end

@@ -2,6 +2,7 @@
 module Blogament
   class ImageUploader < ::CarrierWave::Uploader::Base
 
+    #include ::Cloudinary::CarrierWave
     # Include RMagick or MiniMagick support:
     # include CarrierWave::RMagick
     include ::CarrierWave::MiniMagick
@@ -42,6 +43,7 @@ module Blogament
     end
 
     version :main do
+      #process :eager => true
       process :resize_to_fit => [300, 300]
     end
 

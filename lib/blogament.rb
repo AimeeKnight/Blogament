@@ -13,6 +13,7 @@ require "jquery-ui-rails"
 require "select2-rails"
 require "social-share-button"
 require "searchkick"
+require "cloudinary"
 
 module Blogament
   mattr_writer :author_class

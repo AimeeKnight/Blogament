@@ -32,6 +32,7 @@
         <div class="field form-group">
           <%= f.label :image, class: "col-lg-1 control-label input-lg" %><br>
           <div class="col-lg-11">
+            <%#= f.hidden_field :image_cache %>
             <%= f.file_field :image, class: "input-lg" %>
           </div>
         </div>
