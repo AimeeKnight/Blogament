@@ -25,11 +25,7 @@
         </div>
         <div class="panel-body">
           <blockquote>
-            <% if raw(post.text).length >= 40 %>
-              <p><%= raw post.text.slice(0..40).concat(" ...") %></p>
-            <% else %>
-              <p><%= raw post.text %></p>
-            <% end %>
+            <p class="truncate"><%= strip_tags(post.text).truncate(40) %></p>
           </blockquote>
 
         <%= raw post.tags.map(&:name).map { |t| link_to t, tag_path(t), class: "label label-default" }.join(' ') %>
