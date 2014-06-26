@@ -1,8 +1,8 @@
 module Blogament
   class PostsController < ApplicationController
-    before_action :set_post,               only: :show
     before_action :can_user_create_posts?, only: [:new, :edit, :update, :destroy]
     before_action :correct_user,           only: [:edit, :update, :destroy]
+    before_action :set_post,               only: [:show, :edit, :update, :destroy]
 
     # GET /posts
     def index
@@ -59,26 +59,20 @@ module Blogament
       redirect_to posts_url
     end
 
-    #def autocomplete
-     # render json: Blogament::Post.search(params[:query], autocomplete: true, limit: 10).map(&:title)
-    #end
-
     private
       def can_user_create_posts?
         redirect_to root_url unless current_user && current_user.can_blog?
       end
 
       def correct_user
-        @post = Post.find_by_author_id(current_user.id)
-        redirect_to root_url if @post.nil?
+        @post = Post.find(params[:id])
+        redirect_to root_url if @post.author_id != current_user.id
       end
 
-      # Use callbacks to share common setup or constraints between actions.
       def set_post
         @post = Post.find(params[:id])
       end
 
-      # Only allow a trusted parameter "white list" through.
       def post_params
         params.require(:post).permit(:title, :text, :image, :tag_list)
       end
