@@ -2,6 +2,7 @@ module Blogament
   class Post < ActiveRecord::Base
     searchkick autocomplete: ['title']
     mount_uploader :image, ImageUploader
+    process_in_background :image
     acts_as_taggable
 
     has_many :comments

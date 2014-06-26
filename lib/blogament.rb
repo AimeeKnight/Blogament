@@ -13,6 +13,8 @@ require "jquery-ui-rails"
 require "select2-rails"
 require "social-share-button"
 require "searchkick"
+require "sidekiq"
+require "carrierwave_backgrounder"
 
 module Blogament
   mattr_writer :author_class
