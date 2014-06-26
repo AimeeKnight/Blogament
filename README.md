@@ -159,7 +159,7 @@ heroku run rake searchkick:reindex CLASS=Blogament::Post
 
 To make image upload faster on Heroku, Blogament 
 uses Sidekiq to process S3 image upload in the background.
-With that said, you'll need to install Unicorn in your application as follows:
+With that said, Blogament works by installing Unicorn in your application as follows:
 
 `Gemfile`
 
