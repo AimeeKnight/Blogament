@@ -155,6 +155,65 @@ Then deploy and reindex:
 heroku run rake searchkick:reindex CLASS=Blogament::Post
 ```
 
+#### Sidekiq & Unicorn
+
+To make image upload faster on Heroku, Blogament 
+uses Sidekiq to process S3 image upload in the background.
+With that said, you'll need to install Unicorn in your application as follows:
+
+`Gemfile`
+
+```ruby
+gem 'unicorn'
+```
+
+`/config/unicorn.rb`
+
+```ruby
+worker_processes Integer(ENV["WEB_CONCURRENCY"] || 3)
+timeout 30
+preload_app true
+
+before_fork do |server, worker|
+  Signal.trap 'TERM' do
+    puts 'Unicorn master intercepting TERM and sending myself QUIT instead'
+    Process.kill 'QUIT', Process.pid
+  end
+
+  defined?(ActiveRecord::Base) and
+    ActiveRecord::Base.connection.disconnect!
+end
+
+after_fork do |server, worker|
+  Signal.trap 'TERM' do
+    puts 'Unicorn worker intercepting TERM and doing nothing. Wait for master to send QUIT'
+  end
+
+  defined?(ActiveRecord::Base) and
+    ActiveRecord::Base.establish_connection
+end
+```
+
+Finally, you'll create a `Procfile` in the root of your application.
+
+```ruby
+web: bundle exec unicorn -p $PORT -c ./config/unicorn.rb
+worker: sidekiq -q carrierwave
+```
+
+Note: It's assumed you have Redis installed in development. 
+To tell Sidekiq to listen for Carrierwave, start Sidekiq with:
+
+```sh
+sidekiq -q carrierwave
+```
+
+On Heroku, install the Redis add on with: 
+
+```sh
+sidekiq -q carrierwave
+```
+
 ## License
 
 Blogament is released under the [MIT License](http://www.opensource.org/licenses/MIT).
