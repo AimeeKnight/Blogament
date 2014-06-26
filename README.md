@@ -211,7 +211,7 @@ sidekiq -q carrierwave
 On Heroku, install the Redis add on with: 
 
 ```sh
-sidekiq -q carrierwave
+heroku addons:add redistogo
 ```
 
 ## License
