@@ -6,6 +6,7 @@ spec/dummy/db/*.sqlite3-journal
 spec/dummy/log/*.log
 spec/dummy/tmp/
 spec/dummy/.sass-cache
+spec/dummy/config/application.yml
 spec/dummy/public/uploads/blogament/post/image/*
 tmp/uploads/blogament/post/image/*
 tmp/uploads/tmp/*
