@@ -7,6 +7,7 @@ spec/dummy/log/*.log
 spec/dummy/tmp/
 spec/dummy/.sass-cache
 spec/dummy/public/uploads/blogament/post/image/*
+spec/dummy/config/application.yml
 tmp/uploads/blogament/post/image/*
 tmp/uploads/tmp/*
 tmp/rspec.txt
