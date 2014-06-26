@@ -65,7 +65,7 @@ end
 ```
 #### Security
 
-Blogament assumes your sessions will have a `current user` object.
+Blogament assumes your sessions will have a `current_user` object.
 If you don't have this currently, it will need to be implemented.
 
 #### Rails Console
@@ -78,7 +78,7 @@ Blogament::Post.find(1)
 
 #### Views
 
-First, as with the `current user` method, it's assumed that your user model
+First, as with the `current_user` method, it's assumed that your user model
 with have an email property. If not, you will need to add one.
 
 Blogs listed on the index and show page will display a 'by line' which
@@ -87,7 +87,7 @@ In order to do so, you'll also need to implement the following in your model:
 
 ```ruby
 def by_line
-  #you may want to return the the models name, or maybe their email.
+  #you may want to return the models name, or maybe their email.
 end
 ```
 
