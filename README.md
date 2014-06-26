@@ -46,8 +46,8 @@ Blogament will then take the string "User", call constantize
 on it, and set up the post's relation.
 
 Note: You must pass your user object as a string, due to the way engines load their 
-configuration files. Without the host's class passed as a string, Ruby will throw an error
-since the host's model isn't yet loaded.
+configuration files. Without the host's class passed as a string, Ruby will throw an errow 
+since the class will initially be undefined.
 
 The blog's default route is set to `/blog`. You can set this to something else if you'd like.
 
