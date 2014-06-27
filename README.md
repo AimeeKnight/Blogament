@@ -141,6 +141,7 @@ end
 
 #### Elastic Search and  Heroku
 
+Note: It is assumed you have Elasticsearch set up in development.
 Blogament utilizes Elasticsearch for full text database queries,
 and has been tested with bonsai on Heroku.
 Setup is as follows:
