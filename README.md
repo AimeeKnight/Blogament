@@ -1,6 +1,6 @@
 ## Blogament
 
-[![Build Status](https://travis-ci.org/AimeeKnight/Blogament.svg?branch=master)](https://travis-ci.org/AimeeKnight/Blogament.svg?branch=master)
+[![Build Status](https://travis-ci.org/aimeeknight/Blogament.svg?branch=master)](https://travis-ci.org/AimeeKnight/Blogament.svg?branch=master)
 [![Coverage Status](https://coveralls.io/repos/AimeeKnight/Blogament/badge.png?branch=master)](https://coveralls.io/r/AimeeKnight/Blogament?branch=master)
 
 ![Image](/blogament.png?raw=true)
