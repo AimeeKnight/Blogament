@@ -30,7 +30,7 @@ Gem::Specification.new do |s|
   s.add_dependency "jquery-ui-rails"
   s.add_dependency "select2-rails"
   s.add_dependency "social-share-button"
-  s.add_dependency "searchkick"
+  s.add_dependency "searchkick", "~> 0.7.1"
   s.add_dependency "sidekiq"
   s.add_dependency "carrierwave_backgrounder"
 
