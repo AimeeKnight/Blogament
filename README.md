@@ -32,7 +32,7 @@ You will then need to run `rake db:migrate` as usual.
 
 #### Configuration
 In order for your app's users to 'have many' blogs and comments, you'll need to set your 
-user object (as a string) as Blogament's author class:
+user object (as a string) as Blogament's author class inside the blogament initializer :
 
 ```ruby
 Rails.application.config.before_initialize do
