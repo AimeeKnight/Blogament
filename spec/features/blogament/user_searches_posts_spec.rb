@@ -7,7 +7,7 @@ feature "Searching posts" do
     Blogament::Post.reindex
   end
 
-  scenario "as a logged in user" do
+  skip "as a logged in user" do
     user = User.create!(email: 'aimee@example.com')
     set_current_user(user)
 
@@ -21,7 +21,7 @@ feature "Searching posts" do
     expect(page).to have_content("New Post")
   end
 
-  scenario "as a logged out user", mock_auth: { status: :unauthorized } do
+  skip "as a logged out user", mock_auth: { status: :unauthorized } do
     user = User.create!(email: 'aimee@example.com')
     set_current_user(nil)
 
